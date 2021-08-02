@@ -1,0 +1,146 @@
+
+b {
+  background-color: lightgrey;
+}
+
+
+body {
+
+background-image: url(paperbg.jpg);
+background-repeat: round;
+margin: 0;
+background-size: cover;
+background-position: center center;
+background-attachment: fixed;
+
+}
+
+/*nav bar design
+fixed pos is to allow nav bar to follow user scroll*/
+
+.navigation {
+  top: auto;
+  overflow: hidden;
+  color: blue;
+  background-color: black;
+  padding:5px;
+  top: 0;
+  width: 100%;
+
+}
+
+
+
+
+/*nav bar styling*/
+.navbar ul {
+  width: 600px;
+  list-style-type: none;
+  margin: 0px auto;
+  padding: 0px;
+  text-align: center;
+}
+
+
+
+.navbar ul li{
+  display:inline-block;
+  text-align: center;
+  margin-left: 50px;
+  font-family: verdana;
+  font-weight: bold;
+}
+
+
+
+
+.navbar ul li a {
+  color: white;
+  border-radius: 40px;
+  display: block;
+  width: 100px;
+  padding: 10px;
+  text-decoration: none;
+  background-color: white;
+  font-family: verdana;
+  font-weight: bold;
+  float: left;
+}
+
+.navbar ul li:hover a {
+  color: blue;
+  background-color: white;
+  font-family: verdana;
+  font-weight: bold;
+}
+
+
+
+/*makes the top part cover the left side for some reason*/
+body {margin:0;}
+
+
+
+
+
+.bottomcontainer {
+  background-color: lightgrey;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*flipping style*/
+
+.flippers {
+  background-color: transparent;
+}
+
+.flipcard {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  padding: 20px;
+  }
+
+  .flipcardinner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 black;
+  }
+
+  .flipcard:hover .flipcardinner {
+  transform: rotateY(180deg);
+  }
+
+  .flipcardfront, .flipcardback {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  }
+
+  .flipcardfront {
+  background-color: lightgrey;
+  color: black;
+  }
+
+  .flipcardback {
+  background-color: darkcyan;
+  color: white;
+  transform: rotateY(180deg);
+  overflow: scroll;
+  }

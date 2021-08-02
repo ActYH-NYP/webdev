@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>input</title>
+
+    <style media="screen">
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: arial;
+
+      }
+
+      body {
+
+        align-items: center;
+        background-image: url(diettrends.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+      }
+
+      .bmichecker {
+        max-width: 600px;
+        width: 100%;
+        background: white;
+        padding: 25px 30px;
+        border-radius: 5px;
+        align-self: center;
+        margin: auto;
+        text-align: center;
+
+      }
+
+      form {
+        text-align: center;
+        align: center;
+        margin: auto;
+        width: 60%;
+      }
+
+
+
+      .ew .eh {
+        font-size: 25px;
+        font-weight: 500px;
+
+      }
+
+
+      fieldset {
+         margin: 2em 0;
+         padding: 1em 2em;
+         border: solid 2px green;
+         width: 80px;
+
+      }
+
+      input[type = text] {
+        padding: 10px;
+        margin: 10px 0;
+
+
+      }
+
+      .highbmi {
+
+        margin: auto;
+        text-align: center;
+        background-color: lightgreen;
+        width: 100px;
+        display: inline;
+        height: 100px;
+        float: center;
+
+      }
+
+      .lowbmi {
+
+        margin: auto;
+        text-align: center;
+        background-color: lightgreen;
+        width: 100px;
+        display: inline;
+        height: 100px;
+        float: center;
+
+      }
+
+      .highlowbox {
+        text-align: center;
+        align-self: center;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        display: inline;
+      }
+
+      #fieldset {
+        margin: auto;
+        text-align: center;
+        padding: 10px;
+
+      }
+
+
+      .description {
+        background-color: white;
+        opacity: 0.7;
+        font-family: arial;
+      }
+
+      p {
+        font-family: cursive;
+        text-align: center;
+        font-size: 50px;
+      }
+
+
+
+      .returnmp {
+        overflow: hidden;
+        transition: all 300ms ease;
+        background-color: pink;
+        width: 100px;
+        height: 60px;
+        margin: auto;
+      }
+
+      .returnmp:after {
+        width: 300%;
+        height: 300%;
+        left: -300%;
+        transform: rotate(45deg);
+        background-color: purple;
+        transition: all 300ms ease;
+      }
+
+      .returnmp:hover {
+        color: purple;
+        z-index: 10;
+        font-weight: 600;
+      }
+
+      .returnmp:hover::after {
+        left: -100%;
+      }
+
+      .returnmp:hover {
+        border: 2px solid #purple;
+      }
+
+
+
+
+
+
+    </style>
+
+
+    <script type="text/javascript">
+
+
+    //calculates bmi
+        function highbmif() {
+
+          var str = "Here is your suggested diet";
+          var result = str.link("page1.html");
+          document.getElementById("highbmi").innerHTML = result;
+
+        }
+
+
+        function lowbmif() {
+
+          var str = "Here is your suggested diet";
+          var result = str.link("page2.html");
+          document.getElementById("low").innerHTML = result;
+
+        }
+
+
+        function calcbmi(weight, height) {
+          var weight = document.getElementById('ew').value;
+          var height = document.getElementById('eh').value;
+          weight = parseInt(weight);
+          height = parseInt(height);
+          var bmi = weight / (height^2);
+          alert('your bmi is ' +  bmi );
+
+        };
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+  </head>
+  <body>
+
+    <div class="description">
+
+
+      <p>Please provide the following information about yourself to find out which diet suits you best</p><br>
+
+    </div> <br>
+
+
+  <div class="bmichecker">
+
+    <form class="bmicalc" action="" method="">
+
+      <fieldset id="fieldset" >
+
+        <legend>Calculate your BMI</legend>
+
+
+        <div class="weightdiv">
+
+          <label for="weight" class="weight">Enter Weight</label> <br>
+          <input type="text" name="weight" placeholder="enter weight (kg)" value="" class="ew" id="ew" required> <br>
+
+
+        </div>
+
+        <div class="heightdiv">
+
+          <label for="height" class="height">Enter Height</label> <br>
+          <input type="text" name="" placeholder="enter height (m)" value="" class="eh" id="eh" required> <br>
+
+
+        </div>
+
+
+
+        <div class="calcdiv">
+
+          <button name="button" class="" onclick="calcbmi()">
+            calculate
+          </button>
+
+        </div>
+
+
+
+      </fieldset>
+
+
+
+
+      </form>
+
+    </div>
+
+    <div class="highlowbox">
+
+
+      <ul>
+        <li><button type="button" name="button" class="highbmi" onclick="window.location.href='page2.html';" >click if bmi higher than 25</button><br></li>
+        <li><button type="button" name="button" class="lowbmi" onclick="window.location.href='page1.html';" >click if bmi lower than 25</button><br></li>
+
+      </ul>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="return">
+
+      <button type="button" class="returnmp" onclick="window.location.href='page1.html';">return to main page</button>
+
+
+    </div>
+
+
+
+
+
+
+  </body>
+</html>

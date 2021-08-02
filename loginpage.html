@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <style media="screen">
+
+            /* form border*/
+        form {
+          border: 3px solid lightgrey;
+        }
+
+        /* input style */
+        /* <type>targets the text and password sections */
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid red;
+          box-sizing: border-box;
+        }
+
+        /* style for all buttons */
+        button {
+          background-color: green;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+        }
+
+        /* hover effect for buttons */
+        button:hover {
+          opacity: 0.9;
+        }
+
+        /* style for the cancel button (red) */
+        .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: lightred;
+        }
+
+        /* Centering the profile image */
+        .imgcontainer {
+          text-align: center;
+          margin: 24px 0 12px 0;
+        }
+
+
+
+        /* profile image */
+        img.avatar {
+          width: 40%;
+          border-radius: 50%;
+        }
+
+        /* containers' padding */
+        .container {
+          padding: 16px;
+          background-color: lightblue;
+
+        }
+
+        /* The "Forgot password" text */
+        span.psw {
+          float: right;
+          padding-top: 16px;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+          span.psw {
+            display: block;
+            float: none;
+          }
+          .cancelbtn {
+            width: 100%;
+          }
+        }
+
+
+
+        #submit{
+          text-align: center;
+          background-color: green;
+          color: white;
+          padding: 15px 25px;
+          text-decoration: none;
+
+        }
+
+        #submit:hover{
+          background-color: lightgreen;
+
+        }
+
+
+
+
+
+      </style>
+
+      <script type="text/javascript">
+
+      /*closes window if cancel button is clicked on*/
+      function close_window() {
+        if prompt("close window?")) {
+          close();
+        };
+        }
+
+      </script>
+
+
+
+  </head>
+
+
+
+
+  <body>
+
+    <div class="fullformcontainer">
+
+
+
+        <!-- login button hrefs to page1 -->
+    <form action="input.html" method="post">
+
+  <a href="https://youtu.be/a3Z7zEc7AXQ" target="_blank" >
+    <div class="imgcontainer">
+      <img src="loginpage.jpg" alt="Avatar" class="avatar">
+    </div>
+
+  </a>
+
+
+  <div class="container">
+
+
+    <form class="form" id="loginform" >
+
+
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" class = "psw" required>
+
+
+    <label for="cpsw"><b>Confirm Password</b></label>
+    <input type="password" placeholder="Confirm Password" name="cpsw" class = "cpsw" required>
+
+
+    <button type="submit" name="submit" id="submit" class="login"> login </button>
+
+    </form>
+
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+
+
+  </div>
+
+  <div class="bottomcontainer">
+
+
+
+
+    <button type="button" class="cancelbtn" onclick = "close()">Cancel</button>
+
+    <span class="psw">Forgot <a href="mailto:212417Z@mymail.nyp.edu.sg?subject=feedback">password</a></span>
+
+    <script type="text/javascript">
+
+          document.querySelector('.login').onclick = function() {
+
+          var password = document.querySelector('.psw').value,
+          confirmPassword = document.querySelector('.cpsw').value;
+
+
+          if(password == ""){
+            alert("login failed")
+          }
+
+          else if(password != confirmPassword){
+            alert("passwords do not match");
+            return false; /*prevents form from submitting*/
+            document.getElementById("loginform").reset();
+          }
+
+
+          else if (password == confirmPassword) {
+            alert("login successful")
+            return true
+          }
+
+
+          else {
+
+            alert("gei")
+
+          };
+
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+
+  </div>
+</form>
+
+
+</div>
+
+
+
+  </body>
+</html>
